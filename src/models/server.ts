@@ -1,5 +1,6 @@
 import { App } from "../dependencies/deps.ts";
 import api from "../routes/api.ts";
+import home from "../routes/home.ts";
 
 const PORT = JSON.parse(Deno.env.get("PORT") as string);
 
@@ -13,6 +14,7 @@ class Server {
   }
 
   start() {
+    this.app.use("/", home)
     this.app.use("/api", api);
     this.app.listen(this.port);
     console.log(`Server running on port http://localhost:${this.port}/api`);

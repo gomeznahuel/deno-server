@@ -1,6 +1,5 @@
 import { App } from "../dependencies/deps.ts";
-import api from "../routes/api.ts";
-import home from "../routes/home.ts";
+import { api, home } from "../routes/index.ts";
 
 const PORT = JSON.parse(Deno.env.get("PORT") as string);
 
